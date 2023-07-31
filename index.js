@@ -32,22 +32,19 @@ export default function TodoList() {
         onChange={handleInputChange}
         onKeyPress={handleEnterKeyPress}
       />
-      <button onClick={addTodo}>Ajouter</button>
+      <button onClick={addTodo}>ADD</button>
       <ul>
         {todoList.map((todo, index) => (
           <li key={index}>
             {todo}
-            <button onClick={() => deleteTodo(index)}>Supprimer</button>
-            <button
+            < button onClick={() => deleteTodo(index)}>Delete</button>
+            < button
               onClick={() => {
                 const updatedText = prompt('Modifier le contenu :', todo);
                 if (updatedText !== null) {
                   updateTodo(index, updatedText);
                 }
-              }}
-            >
-              Mettre à jour
-            </button>
+              }}> Update </button>
           </li>
         ))}
       </ul>
